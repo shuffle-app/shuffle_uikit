@@ -54,7 +54,9 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
               ] else ...[
                 if (data.additionalButton != null) data.additionalButton!,
                 if (data.defaultButtonText.isNotEmpty)
-                  context.dialogButton(
+      SizedBox(
+      width: data.additionalButton != null ? null : 0.8.sw,
+      child:context.dialogButton(
                     data: BaseUiKitButtonData(
                       onPressed: data.onPop ?? () => context.pop(),
                       text: data.defaultButtonText,
@@ -63,7 +65,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
                     isOutlined: data.defaultButtonOutlined,
                     dialogButtonType:
                         data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
-                  )
+                  ))
               ]
             ],
         actionsAlignment: MainAxisAlignment.center,

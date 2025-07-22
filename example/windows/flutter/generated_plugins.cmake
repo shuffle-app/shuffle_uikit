@@ -4,7 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   dynamic_color
-  smart_auth
+  file_selector_windows
   url_launcher_windows
 )
 

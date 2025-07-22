@@ -272,7 +272,7 @@ class UiKitThemes {
           elevation: 0,
           scrolledUnderElevation: 0,
         ),
-        uiKitTabBarTheme: TabBarTheme(
+        uiKitTabBarTheme: TabBarThemeData(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
           labelColor: ColorsFoundation.lightSurface,
@@ -289,7 +289,7 @@ class UiKitThemes {
             borderRadius: BorderRadiusFoundation.max,
           ),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           shadowColor: Colors.transparent,
           surfaceTintColor: ColorsFoundation.solidSurface,
           elevation: 0,
@@ -608,7 +608,7 @@ class UiKitThemes {
           elevation: 0,
           scrolledUnderElevation: 0,
         ),
-        uiKitTabBarTheme: TabBarTheme(
+        uiKitTabBarTheme: TabBarThemeData(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
           labelColor: ColorsFoundation.lightBodyTypographyColor,
@@ -625,7 +625,7 @@ class UiKitThemes {
             borderRadius: BorderRadiusFoundation.max,
           ),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           shadowColor: Colors.transparent,
           surfaceTintColor: ColorsFoundation.solidSurface,
           elevation: 0,
@@ -686,7 +686,7 @@ class UiKitThemes {
         }),
       ),
     ),
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       indicatorSize: TabBarIndicatorSize.tab,
       dividerColor: Colors.transparent,
       labelColor: Colors.black,

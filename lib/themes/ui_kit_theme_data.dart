@@ -10,11 +10,11 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final InputDecorationTheme noIconInputBorderRadius20;
   final InputDecorationTheme noFillInputTheme;
   final AppBarTheme customAppBapTheme;
-  final TabBarTheme uiKitTabBarTheme;
+  final TabBarThemeData uiKitTabBarTheme;
   final UiKitBoldTextTheme boldTextTheme;
   final UiKitRegularTextTheme regularTextTheme;
   final ButtonThemeData buttonTheme;
-  final CardTheme cardTheme;
+  final CardThemeData cardTheme;
   final UiKitChipThemeData chipTheme;
   final ButtonStyle ordinaryButtonStyle;
   final ButtonStyle smallOrdinaryButtonStyle;
@@ -69,11 +69,11 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     InputDecorationTheme? noFillInputTheme,
     InputDecorationTheme? noIconInputBorderRadius24,
     AppBarTheme? customAppBapTheme,
-    TabBarTheme? uiKitTabBarTheme,
+    TabBarThemeData? uiKitTabBarTheme,
     UiKitBoldTextTheme? boldTextTheme,
     UiKitRegularTextTheme? regularTextTheme,
     ButtonThemeData? buttonTheme,
-    CardTheme? cardTheme,
+    CardThemeData? cardTheme,
     UiKitChipThemeData? chipTheme,
     ButtonStyle? ordinaryButtonStyle,
     BottomSheetThemeData? bottomSheetTheme,

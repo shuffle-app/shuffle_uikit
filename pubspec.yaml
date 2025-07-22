@@ -17,7 +17,7 @@ dependencies:
     sdk: flutter
 
   #ui utils
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.2.0
   flutter_cache_manager: ^3.4.1
   flutter_screenutil: ^5.9.3
   vibration: ^3.1.3
@@ -26,28 +26,28 @@ dependencies:
   barcode_widget: ^2.0.4
 
   #ui widgets
-  carousel_slider_plus: ^7.1.0
+  carousel_slider_plus: ^7.1.1
   cached_network_image: ^3.4.1
   gradient_borders: ^1.0.1
   shimmer: ^3.0.0
   flutter_html: ^3.0.0-beta.2
   auto_size_text: ^3.0.0
-  url_launcher: ^6.3.1
+  url_launcher: ^6.3.2
   table_calendar: ^3.2.0
-  flutter_html_iframe: any
-  flutter_html_svg: any
+  flutter_html_iframe: 3.0.0
+  flutter_html_svg: 3.0.0
   flutter_html_table_extension:
     git:
       url: https://github.com/shuffle-app/flutter_html_table_extension.git
       ref: main
-  http_parser:
+  http_parser: ^4.1.2
   pointer_interceptor: ^0.10.1+2
   pinput:
     git:
       url: https://github.com/shuffle-app/Flutter_Pinput.git
       ref: master
   sliver_tools: ^0.2.12
-  infinite_scroll_pagination: ^5.0.0
+  infinite_scroll_pagination: ^5.1.0
 #  infinite_scroll_pagination:
 #    git:
 #      url: https://github.com/EdsonBueno/infinite_scroll_pagination.git
@@ -85,10 +85,10 @@ dependencies:
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
   intl: ^0.20.2
-  just_audio: ^0.9.46
+  just_audio: ^0.10.4
 
   #custom splash factory
-  flutter_platform_widgets: ^8.0.0
+  flutter_platform_widgets: ^9.0.0
   dynamic_color: ^1.7.0
 
   #video player
@@ -97,8 +97,8 @@ dependencies:
 #  media_kit_libs_video: ^1.0.5
 
   #maps
-  google_maps_flutter: ^2.12.1
-  flutter_polyline_points: ^2.1.0
+  google_maps_flutter: ^2.12.3
+  flutter_polyline_points: ^3.0.0
   #TODO: wait merge https://github.com/HMS-Core/hms-flutter-plugin/pull/405
   huawei_map:
     git:
@@ -128,9 +128,9 @@ dependencies:
   sensors_plus: ^6.1.1
 
   collection: any
-  html: ^0.15.5
+  html: ^0.15.6
   webview_flutter: any
-  vector_graphics: ^1.1.18
+  vector_graphics: ^1.1.19
 
 dependency_overrides:
   intl: ^0.20.2
@@ -143,7 +143,7 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   flutter_gen_runner: ^5.8.0
   build_runner: ^2.4.14
   icon_font_generator: ^4.0.0

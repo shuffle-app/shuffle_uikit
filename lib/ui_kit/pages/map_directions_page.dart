@@ -97,12 +97,11 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
 
   void _currentLocationListener() async {
     try {
-      final points = PolylinePoints();
+      final points = PolylinePoints(apiKey: _apiKey);
       debugPrint(
           'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
       final result = await points
           .getRouteBetweenCoordinates(
-              googleApiKey: _apiKey,
               request: PolylineRequest(
                 origin: PointLatLng(
                     widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
