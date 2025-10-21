@@ -9,14 +9,14 @@ abstract class UiKitContentUpdateWidget extends StatelessWidget {
   final Widget? customChild;
 
   const UiKitContentUpdateWidget({
-    Key? key,
+    super.key,
     this.title,
     this.iconLink,
     this.leadingImageUrl,
     this.customChild,
     this.subtitle,
     this.iconData,
-  }) : super(key: key);
+  });
 
   double get height;
 

@@ -8,10 +8,10 @@ class UiKitCustomChildContentUpdateWidget extends UiKitContentUpdateWidget {
   final double height;
 
   const UiKitCustomChildContentUpdateWidget({
-    Key? key,
+    super.key,
     required this.child,
     required this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
